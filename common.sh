@@ -137,6 +137,10 @@ install_git_repo()
     url="$1"
     tag="$2"
     path="$3"
+    if [ -d "$path" ]; then
+        echo "$path already exists. Skipping git repo install."
+        return
+    fi
     sudo git clone --branch $tag --depth=1 "$url" "$path"
 }
 
