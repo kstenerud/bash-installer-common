@@ -130,6 +130,7 @@ install_appimage()
     url="$1"
     binary_name="$2"
     sudo wget -qO /usr/local/bin/$binary_name "$url"
+    chmod a+x /usr/local/bin/$binary_name
 }
 
 install_git_repo()
